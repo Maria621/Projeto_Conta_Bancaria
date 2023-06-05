@@ -2,10 +2,35 @@ package conta;
 
 import java.util.Scanner;
 import conta.util.Cores;
+import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupança;
 
 public class Menu {
 
 	public static void main(String[] args) {
+		//Teste da classe conta
+		Conta c1 = new Conta(1,123,1,"Adriana",10000.0f);
+		c1.visualizar();
+		c1.sacar(12000.0f);
+		c1.visualizar();
+		c1.depositar(5000.0f);
+		c1.visualizar();
+		//Teste da classe Conta Corrente
+		ContaCorrente cc1 = new ContaCorrente (2,123,1,"Mariana",15000.0f,1000.0f);
+		cc1.visualizar();
+		cc1.sacar(12000.0f);
+		cc1.visualizar();
+		cc1.depositar(5000.0f);
+		cc1.visualizar();
+		//Teste da classe Conta Poupança
+		ContaPoupança cp1 = new ContaPoupança (3,123,2,"Victor",100000.0f, 15);
+		cp1.visualizar();
+		cp1.sacar(1000.0f);
+		cp1.visualizar();
+		cp1.depositar(5000.0f);
+		cp1.visualizar();
+		
 		Scanner leia = new Scanner (System.in);
 		int opçao;
 		
@@ -34,39 +59,39 @@ public class Menu {
 		opçao = leia.nextInt();
 		
 		if(opçao == 9){
-			System.out.println( Cores.TEXT_WHITE_BOLD +"\nBanco do Brazil com Z - O seu Futuro começa aqui!");
+			System.out.println( Cores.TEXT_CYAN +"\nBanco do Brazil com Z - O seu Futuro começa aqui!");
 			leia.close();
 			System.exit(0);
 		}		switch (opçao) {
 		case 1: {
-			System.out.println(Cores.TEXT_WHITE_BOLD + " Criar Conta\n\n");
+			System.out.println(Cores.TEXT_CYAN + " Criar Conta\n\n");
 			break;
 		}
 		case 2:{
-			System.out.println(Cores.TEXT_WHITE_BOLD + " Listar todas as Contas\n ");
+			System.out.println(Cores.TEXT_CYAN + " Listar todas as Contas\n ");
 			break;
 		}
 		case 3:{
-			System.out.println(Cores.TEXT_WHITE_BOLD + " Buscar Conta por Numero\n ");
+			System.out.println(Cores.TEXT_CYAN + " Buscar Conta por Numero\n ");
 			break;
 		}
 		case 4:{
-			System.out.println(Cores.TEXT_WHITE_BOLD + " Atualizar Dados da Conta\n ");
+			System.out.println(Cores.TEXT_CYAN + " Atualizar Dados da Conta\n ");
 			break;
 		}
 		case 5:{
-			System.out.println(Cores.TEXT_WHITE_BOLD + " Apagar Conta\n ");
+			System.out.println(Cores.TEXT_CYAN + " Apagar Conta\n ");
 			break;
 		}
 		case 6:{
-			System.out.println(Cores.TEXT_WHITE_BOLD + "  Sacar\n  ");
+			System.out.println(Cores.TEXT_CYAN + "  Sacar\n  ");
 			break;
 		}
 		case 7:{
-			System.out.println(Cores.TEXT_WHITE_BOLD + "  Depositar\n  ");
+			System.out.println(Cores.TEXT_CYAN + "  Depositar\n  ");
 			break;
 		}case 8:{
-			System.out.println(Cores.TEXT_WHITE_BOLD + " Transferir valores entre Contas\n ");
+			System.out.println(Cores.TEXT_CYAN + " Transferir valores entre Contas\n ");
 			break;
 		}
 		
